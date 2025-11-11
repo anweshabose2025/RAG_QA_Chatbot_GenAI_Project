@@ -1,3 +1,4 @@
+# git clone "https://github.com/anweshabose2025/RAG_QA_Chatbot_GenAI_Project.git"
 # (D:\Udemy\Complete_GenAI_Langchain_Huggingface\Python\venv) 
 # D:\Udemy\Complete_GenAI_Langchain_Huggingface\UPractice2\RAG_QA_Chatbot>streamlit run 1-Streamlit_app.py
 # Python == 3.10
@@ -81,6 +82,7 @@ if "db_retriever" in st.session_state and input_text:
     st.success(response["answer"])
     st.write("Thank You. I hope it helped. Dont hesitate to ask the next question. 😊")
     st.warning("[[ If you want me to learn any Other Document, please refresh the page and upload the Document entering the API Key. Otherwise, no need to upload the same file again ]]")
+
 
 
 
