@@ -5,3 +5,4 @@ langchain
 langchain_community
 dotenv
 faiss-cpu
+langchain_huggingface
