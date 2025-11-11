@@ -11,7 +11,8 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain.chains.combine_documents import create_stuff_documents_chain
+#from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain.chains.combine_documents.stuff import create_stuff_documents_chain
 from langchain.chains.retrieval import create_retrieval_chain
 from langchain_core.chat_history import BaseChatMessageHistory
 from langchain_community.chat_message_histories.in_memory import ChatMessageHistory
@@ -80,4 +81,5 @@ if "db_retriever" in st.session_state and input_text:
     st.success(response["answer"])
     st.write("Thank You. I hope it helped. Dont hesitate to ask the next question. 😊")
     st.warning("[[ If you want me to learn any Other Document, please refresh the page and upload the Document entering the API Key. Otherwise, no need to upload the same file again ]]")
+
 
