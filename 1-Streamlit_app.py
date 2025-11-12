@@ -1,5 +1,5 @@
-# (D:\Udemy\Complete_GenAI_Langchain_Huggingface\Python\venv) 
-# D:\Udemy\Complete_GenAI_Langchain_Huggingface\UPractice2\RAG_QA_Chatbot>streamlit run 1-Streamlit_app.py
+# git clone "https://github.com/anweshabose2025/RAG_QA_Chatbot_GenAI_Project.git"
+# streamlit run 1-Streamlit_app.py
 # Python == 3.10
 
 import streamlit as st
@@ -35,7 +35,7 @@ input_text=st.chat_input("Ask anything from the uploaded file...")
 if not groq_api_key and not file:
     st.warning("Please enter the Groq API Key & upload the PDF file before you proceed...")
 
-if st.button("Document Embedding") and groq_api_key and file:
+if st.button("Learn Document") and groq_api_key and file:
     with st.spinner("Learning the Document..."):
         if "db_retriever" not in st.session_state:
             with open("temporary.pdf", "wb") as f:
@@ -91,3 +91,4 @@ if "db_retriever" in st.session_state and input_text:
     #st.success(response["answer"])
     st.write("Thank You. I hope it helped. Dont hesitate to ask the next question. 😊")
     st.warning("[[ If you want me to learn any Other Document, please refresh the page and upload the Document entering the API Key. Otherwise, no need to upload the same file again ]]")
+
