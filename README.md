@@ -1,5 +1,5 @@
 # RAG_QA_Chatbot_GenAI_Project
-It can also manage History of previous chat.
+It can manage the chat history and can display previous chats.
 
 <img width="1352" height="667" alt="Image" src="https://github.com/user-attachments/assets/c3a83961-d25e-406c-9f56-01216cbbb5d1" />
 <img width="1365" height="722" alt="Image" src="https://github.com/user-attachments/assets/baf7a8c4-df15-4943-917b-e4837143eb9d" />
