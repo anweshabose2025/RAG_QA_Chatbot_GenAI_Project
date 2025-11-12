@@ -20,17 +20,16 @@ from langchain.chains import create_history_aware_retriever
 
 ## streamlit framework
 st.set_page_config("🤖 Chatbot")
+st.header("🌐 RAG Q&A Chatbot With Groq")
+st.divider()
+file = st.file_uploader("Enter the PDF File", type="pdf", accept_multiple_files=False)
+input_text=st.chat_input("Ask anything from the uploaded file...")
 
 st.sidebar.title("Settings")
 groq_api_key=st.sidebar.text_input("Enter your Groq API Key:",type="password")
 engine=st.sidebar.selectbox("Select Open Source model",["openai/gpt-oss-120b","openai/gpt-oss-20b"])
 temperature=st.sidebar.slider("Temperature",min_value=0.0,max_value=1.0,value=0.7) # value=0.7: default temperature
 max_tokens = st.sidebar.slider("Max Tokens", min_value=50, max_value=300, value=150) # value=150: default max_tokens
-
-st.header("🌐 RAG Q&A Chatbot With Groq")
-st.divider()
-file = st.file_uploader("Enter the PDF File", type="pdf", accept_multiple_files=False)
-input_text=st.chat_input("Ask anything from the uploaded file...")
 
 if not groq_api_key and not file:
     st.warning("Please enter the Groq API Key & upload the PDF file before you proceed...")
@@ -87,8 +86,5 @@ if "db_retriever" in st.session_state and input_text:
     st.session_state.messages.append({"role":"assistant", "content":response["answer"]})
     st.chat_message("assistant").write(response["answer"])
 
-    #st.write("Your Question:", input_text)
-    #st.success(response["answer"])
     st.write("Thank You. I hope it helped. Dont hesitate to ask the next question. 😊")
     st.warning("[[ If you want me to learn any Other Document, please refresh the page and upload the Document entering the API Key. Otherwise, no need to upload the same file again ]]")
-
