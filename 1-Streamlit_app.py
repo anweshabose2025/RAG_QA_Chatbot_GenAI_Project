@@ -71,10 +71,12 @@ if "db_retriever" in st.session_state and input_text:
     retriever_chain = create_history_aware_retriever(llm,st.session_state.db_retriever,retriever_prompt)
     rag_chain = create_retrieval_chain(retriever=retriever_chain, combine_docs_chain=chain)
 
+    if "store" not in st.session_state:
+    st.session_state.store = {}
     def session_status(session_id)-> BaseChatMessageHistory:
-        if session_id not in st.session_state:
-            st.session_state[session_id]=ChatMessageHistory()
-        return st.session_state[session_id]
+        if session_id not in st.session_state.store:
+            st.session_state.store[session_id]=ChatMessageHistory()
+        return st.session_state.store[session_id]
     
     runnable_msg_history = RunnableWithMessageHistory(rag_chain,session_status, input_messages_key="input", output_messages_key="answer", history_messages_key="chat_history")
 
@@ -88,3 +90,4 @@ if "db_retriever" in st.session_state and input_text:
 
     st.write("Thank You. I hope it helped. Dont hesitate to ask the next question. 😊")
     st.warning("[[ If you want me to learn any Other Document, please refresh the page and upload the Document entering the API Key. Otherwise, no need to upload the same file again ]]")
+
