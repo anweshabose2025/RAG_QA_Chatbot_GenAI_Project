@@ -1,6 +1,7 @@
 # git clone "https://github.com/anweshabose2025/RAG_QA_Chatbot_GenAI_Project.git"
 # streamlit run 1-Streamlit_app.py
-# Python == 3.10
+# conda create -p venv python==3.10
+# pip install -r requirements.txt
 
 import streamlit as st
 from langchain_community.document_loaders import PyPDFLoader
@@ -90,4 +91,5 @@ if "db_retriever" in st.session_state and input_text:
 
     st.write("Thank You. I hope it helped. Dont hesitate to ask the next question. 😊")
     st.warning("[[ If you want me to learn any Other Document, please refresh the page and upload the Document entering the API Key. Otherwise, no need to upload the same file again ]]")
+
 
