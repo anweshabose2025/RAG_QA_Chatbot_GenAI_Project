@@ -10,3 +10,13 @@ faiss-cpu
 langchain-groq
 langchain==0.0.350
 langchain-community==0.0.19
+
+streamlit
+langchain-community
+langchain-core
+langchain
+faiss-cpu
+pypdf
+langchain-huggingface
+faiss-cpu
+langchain-groq
